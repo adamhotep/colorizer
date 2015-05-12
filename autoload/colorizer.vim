@@ -103,7 +103,7 @@ endfunction
 function! s:HexCode(str, lineno) "{{{2
   let ret = []
   let place = 0
-  let colorpat = '#[0-9A-Fa-f]\{3\}\>\|#[0-9A-Fa-f]\{6\}\>'
+  let colorpat = '[^0-9A-Fa-f]\zs#\%([0-9A-F]\{3\}\%([0-9A-F]\{3\}\)\?\|[0-9a-f]\{3\}\%([0-9a-f]\{3\}\)\?\)\>\%(-\%(#[0-9a-fA-F]\{3,6\}\>\)\@!\)\@!'
   while 1
     let foundcolor = matchstr(a:str, colorpat, place)
     if foundcolor == ''
