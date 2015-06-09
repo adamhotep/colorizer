@@ -283,6 +283,7 @@ function! colorizer#ColorHighlight(update, ...) "{{{1
   if g:colorizer_fgcontrast != s:saved_fgcontrast || (exists("a:1") && a:1 == '!')
     let s:force_group_update = 1
   endif
+
   for i in range(1, line("$"))
     call s:PreviewColorInLine(i)
   endfor
@@ -302,8 +303,7 @@ function! colorizer#ColorHighlight(update, ...) "{{{1
       autocmd CursorMoved,CursorMovedI * silent call s:CursorMoved()
     endif
     " rgba handles differently, so need updating
-    autocmd CursorMoved * silent call colorizer#ColorHighlight(1)
-    autocmd CursorMovedI * silent call colorizer#ColorHighlight(1)
+    autocmd GUIEnter * silent call colorizer#ColorHighlight(1)
     autocmd BufEnter * silent call colorizer#ColorHighlight(1)
     autocmd WinEnter * silent call colorizer#ColorHighlight(1)
     autocmd ColorScheme * let s:force_group_update=1 | silent call colorizer#ColorHighlight(1)
