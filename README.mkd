@@ -2,14 +2,14 @@
 
 A Vim plugin to colorize all text in the form #rrggbb or #rgb. See the comment at the beginning of the [plugin](https://github.com/adamhotep/colorizer/tree/master/plugin/colorizer.vim) for more.
 
-![screenshot](https://github.com/lilydjwg/colorizer/raw/master/screenshot.png)
+![screenshot](https://github.com/adamhotep/colorizer/raw/master/screenshot.png)
 
 #### Pathogen
 
 You can install the plugin with pathogen by copying and pasting the below snippet.
 
     cd ~/.vim/bundle
-    git clone https://github.com/lilydjwg/colorizer
+    git clone https://github.com/adamhotep/colorizer
 
 The `Makefile` is used to quickly install/uninstall the script.
 
